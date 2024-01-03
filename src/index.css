@@ -1,0 +1,139 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;;
+  }
+  
+  .app-container {
+    background-color: rgb(43, 43, 43);
+  }
+  
+  .title {
+    color: rgb(255, 85, 0);
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .title-text {
+    font-size: 17px;
+  }
+  
+  .title-cont {
+    width: 90%;
+  }
+  
+  .add {
+    background-color: rgb(255, 85, 0);
+    font-size: 30px;
+    width: 18vw;
+  }
+  
+  .search {
+    width: 71vw;
+  }
+  
+  .hr {
+    border: 2px solid #000;
+    width: 90%;
+  }
+  
+  .todo-container,
+  .todo-items {
+    width: 43vw;
+    overflow-y: auto;
+    overflow-x: hidden; 
+  }
+  
+  .done-container,
+  .done-items {
+    width: 43vw;
+  }
+  
+  .todo-items,
+  .done-items {
+    margin-top: 2vh;
+    height: 22vh;
+  }
+  
+  .item {
+    width: 40vw;
+    height: 20vh;
+    background-color: #080808;
+    padding: 1vh;
+  }
+  
+  .item-header {
+    display: flex;
+  }
+  .day {
+    color: rgb(255, 85, 0);
+  }
+  
+  .note {
+    width: 43vw;
+    height: 15vh;
+    font-size: 11px;
+    color: white;
+  }
+  
+  .edit-delete {
+    width: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    padding-bottom: 2vh;
+    padding-right: 6px;
+  }
+  
+  .todo-container::-webkit-scrollbar {
+    width: 6px; /* Set the width of the scrollbar */
+  }
+  
+  .todo-container::-webkit-scrollbar-thumb {
+    background-color: #4a5568; /* Set the color of the scrollbar thumb */
+    border-radius: 3px; /* Set the border-radius of the thumb */
+  }
+  
+  .todo-container::-webkit-scrollbar-track {
+    background-color: #2d3748; /* Set the color of the scrollbar track */
+  }
+  
+  /* Add these styles for the new div */
+  .add-note-container {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure it's on top of other elements */
+  }
+  
+  .add-note-container input,
+  .add-note-container textarea,
+  .add-note-container button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .add-note-container button {
+    background-color: rgb(255, 85, 0);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .add-note-container button:hover {
+    background-color: #e65100; /* Darken the color on hover */
+  }
