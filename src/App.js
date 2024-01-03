@@ -1,7 +1,9 @@
 import './App.css';
 import AddNoteForm from './Components/AddNoteForm';
+import DoneList from './Components/DoneList';
 import Header from './Components/Header';
 import SearchBar from './Components/SearchBar';
+import TodoList from './Components/ToDoList';
 import { useNotesStore } from './useNotesStore';
 
 
@@ -16,6 +18,10 @@ function App() {
     toggleAddNote,
     handleInputChange,
     handleSaveNote,
+    handleCheckboxChange,
+    handleDeleteNote,
+    sortNotesByPriorityAsc,
+    sortNotesByPriorityDesc,
   } = useNotesStore();
 
 
@@ -31,6 +37,19 @@ function App() {
             handleInputChange={handleInputChange}
             handleSaveNote={handleSaveNote}
           />
+          <hr className="hr my-[1vw]" />
+          <div className="app flex gap-[3vw]">
+            <TodoList               
+              notes={notes}
+              handleCheckboxChange={handleCheckboxChange}
+              handleDeleteNote={handleDeleteNote}
+              toggleAddNote={toggleAddNote}
+              setSelectedNote={setSelectedNote}
+              sortNotesByPriorityAsc={sortNotesByPriorityAsc}
+              sortNotesByPriorityDesc={sortNotesByPriorityDesc}
+            />
+            <DoneList notes={notes} />
+          </div>
     </div>
   );
 }
