@@ -4,7 +4,6 @@ function AddNoteForm({
     showAddNote,
     newNote,
     selectedNote,
-    toggleAddNote,
     handleInputChange,
     handleSaveNote,
   }) {

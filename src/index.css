@@ -52,20 +52,19 @@ body {
 .done-container,
 .done-items {
   width: 43vw;
+
 }
 
 .todo-items,
 .done-items {
   margin-top: 2vh;
-  height: 22vh;
 }
 
-.item {
-  width: 40vw;
-  height: 20vh;
-  background-color: #080808;
-  padding: 1vh;
+
+.done-color {
+  background-color: #080808ac;
 }
+
 
 .item-header {
   display: flex;
@@ -74,21 +73,21 @@ body {
   color: rgb(255, 85, 0);
 }
 
-.note {
-  width: 43vw;
-  height: 15vh;
-  font-size: 11px;
-  color: white;
+.item {
+  width: 40vw;
+  background-color: #080808;
+  padding: 1vh;
+  height: 18vh;
 }
 
+  
 .edit-delete {
-  width: 3vw;
+  width: 38vw;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  flex-direction: column; /* Align icons horizontally */
+  justify-content: flex-end; /* Align icons to the right */
   align-items: end;
-  padding-bottom: 2vh;
-  padding-right: 6px;
+  padding-right: 10px;
 }
 
 .todo-container::-webkit-scrollbar {
@@ -136,4 +135,22 @@ body {
 
 .add-note-container button:hover {
   background-color: #e65100; /* Darken the color on hover */
+}
+
+.done {
+  text-decoration: line-through; 
+  color: #000;
+}
+
+@keyframes flashy {
+  0%, 100% {
+    background-color: rgb(255, 0, 0);
+  }
+  50% {
+    background-color: rgb(198, 0, 0);
+  }
+}
+
+.flashy-animation {
+  animation: flashy 2s infinite;
 }

@@ -39,15 +39,16 @@ function App() {
           />
           <hr className="hr my-[1vw]" />
           <div className="app flex gap-[3vw]">
-            <TodoList               
-              notes={notes}
-              handleCheckboxChange={handleCheckboxChange}
-              handleDeleteNote={handleDeleteNote}
-              toggleAddNote={toggleAddNote}
-              setSelectedNote={setSelectedNote}
-              sortNotesByPriorityAsc={sortNotesByPriorityAsc}
-              sortNotesByPriorityDesc={sortNotesByPriorityDesc}
-            />
+          <TodoList
+            notes={notes}
+            handleCheckboxChange={handleCheckboxChange}
+            handleDeleteNote={handleDeleteNote}
+            toggleAddNote={toggleAddNote}
+            setSelectedNote={setSelectedNote}
+            sortNotesByPriorityAsc={sortNotesByPriorityAsc}
+            sortNotesByPriorityDesc={sortNotesByPriorityDesc}
+            handleInputChange={handleInputChange}  
+          />
             <DoneList notes={notes} />
           </div>
     </div>

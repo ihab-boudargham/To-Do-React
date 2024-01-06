@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { formatDistanceToNow } from 'date-fns';
+import { isAfter, addDays, isBefore } from 'date-fns';
 
 function TodoItem({
   note,
@@ -10,9 +11,11 @@ function TodoItem({
   toggleAddNote,
   setSelectedNote,
 }) {
+  // Check if the note is due in the next 24 hours
+  const isDueSoon = isAfter(new Date(note.dueDate), new Date()) && isBefore(new Date(note.dueDate), addDays(new Date(), 1));
   return (
-    <div className="todo-items" key={note.id}>
-      <div className='item rounded-xl p-2'>
+    <div className='todo-items' key={note.id}>
+      <div className= {`item rounded-xl p-2 ${isDueSoon ? 'flashy-animation' : ''}`}>
         <div className='item-header rounded-t-xl h-8 px-2'>
           <div className='flex items-center text-white text-sm gap-2'>
             <p className='priority'>
@@ -44,7 +47,7 @@ function TodoItem({
             <p>{note.content}</p>
           </div>
 
-          <div className='edit-delete gap-3'>
+          <div className='edit-delete gap-3 pt-4'>
             <button onClick={() => {toggleAddNote(); setSelectedNote(note);}}>
               <FontAwesomeIcon icon={faEdit} className="text-red-500" />
             </button>
